@@ -39,39 +39,39 @@ create table course(
     score_rule_id bigint unsigned
 )default charset=utf8;
 
-drop table if exists `score_rule`;
-create table `score_rule` (
-  `id` bigint(20) unsigned not null auto_increment,
-  `gmt_create` datetime default current_timestamp,
-  `gmt_modified` datetime default current_timestamp on update current_timestamp,
-  `report` tinyint(3) unsigned default null,
-  `five_point_percentage` tinyint(3) unsigned default null,
-  `four_point_percentage` tinyint(3) unsigned default null,
-  `three_point_percentage` tinyint(3) unsigned default null,
-  primary key (`id`)
+drop table if exists score_rule;
+create table score_rule (
+  id bigint(20) unsigned not null auto_increment,
+  gmt_create datetime default current_timestamp,
+  gmt_modified datetime default current_timestamp on update current_timestamp,
+  report tinyint(3) unsigned default null,
+  five_point_percentage tinyint(3) unsigned default null,
+  four_point_percentage tinyint(3) unsigned default null,
+  three_point_percentage tinyint(3) unsigned default null,
+  primary key (id)
 )default charset=utf8;
 
-drop table if exists `class_info`;
-create table `class_info` (
-  `id` bigint(20) unsigned not null auto_increment,
-  `gmt_create` datetime default current_timestamp,
-  `gmt_modified` datetime default current_timestamp on update current_timestamp,
-  `class_name` varchar(255) not null,
-  `course_id` bigint(20) unsigned,
-  `site` varchar(255) default null,
-  `class_time` varchar(255) default null,
-  `score_rule_id` bigint(20) unsigned,
-  primary key (`id`)
+drop table if exists class_info;
+create table class_info (
+  id bigint(20) unsigned not null auto_increment,
+  gmt_create datetime default current_timestamp,
+  gmt_modified datetime default current_timestamp on update current_timestamp,
+  class_name varchar(255) not null,
+  course_id bigint(20) unsigned,
+  site varchar(255) default null,
+  class_time varchar(255) default null,
+  score_rule_id bigint(20) unsigned,
+  primary key (id)
 )default charset=utf8;
 
-drop table if exists `course_selection`;
-create table `course_selection` (
-  `id` bigint(20) unsigned not null auto_increment,
-  `gmt_create` datetime default current_timestamp,
-  `gmt_modified` datetime default current_timestamp on update current_timestamp,
-  `class_id` bigint(20) unsigned,
-  `student_id` bigint(20) unsigned,
-  primary key (`id`)
+drop table if exists course_selection;
+create table course_selection (
+  id bigint(20) unsigned not null auto_increment,
+  gmt_create datetime default current_timestamp,
+  gmt_modified datetime default current_timestamp on update current_timestamp,
+  class_id bigint(20) unsigned,
+  student_id bigint(20) unsigned,
+  primary key (id)
 )default charset=utf8;
 
 drop table if exists attendance;
@@ -179,7 +179,7 @@ create table location(
 	gmt_modified datetime default current_timestamp on update current_timestamp,
     class_id bigint unsigned,
     seminar_id bigint unsigned,
-    longitude decimal,
-    latitude decimal,
+    longitude decimal(10, 6),
+    latitude decimal(10, 6),
     status tinyint unsigned
 )default charset=utf8;
