@@ -116,7 +116,8 @@ create table fix_group(
        id bigint primary key  auto_increment,
        gmt_create datetime default current_timestamp, 
 	   gmt_modified datetime default current_timestamp on update current_timestamp,
-       class_id bigint unsigned
+       class_id bigint unsigned,
+       leader bigint unsigned
 )default charset=utf8;
 
 drop table if exists fix_group_member;
@@ -136,7 +137,9 @@ create table seminar_group(
 	   gmt_modified datetime default current_timestamp on update current_timestamp,
        seminar_id bigint unsigned,
        report_garde int unsigned check(report_grade>=1 and grade<=5),
-       report varchar(5000)
+       report varchar(5000),
+       class_id bigint unsigned,
+       leader bigint unsigned
 )default charset=utf8;
 
 drop table if exists seminar_group_member;
@@ -167,4 +170,16 @@ create table student_score_group(
        student_id bigint unsigned,
        seminar_group_topic bigint unsigned,
        grade tinyint unsigned check(grade>=1 and grade<=5)
+)default charset=utf8;
+
+drop table if exists location;
+create table location(
+    id bigint unsigned primary key auto_increment,
+    gmt_create datetime default current_timestamp, 
+	gmt_modified datetime default current_timestamp on update current_timestamp,
+    class_id bigint unsigned,
+    seminar_id bigint unsigned,
+    longitude decimal,
+    latitude decimal,
+    status tinyint unsigned
 )default charset=utf8;
