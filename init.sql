@@ -137,7 +137,7 @@ create table seminar_group(
 	   gmt_modified datetime default current_timestamp on update current_timestamp,
        seminar_id bigint unsigned,
        report_garde int unsigned check(report_grade>=1 and grade<=5),
-       report varchar(5000),
+       report varchar(100),
        class_id bigint unsigned,
        leader bigint unsigned
 )default charset=utf8;
