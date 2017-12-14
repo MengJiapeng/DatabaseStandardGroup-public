@@ -15,7 +15,8 @@ create table user_info(
     gmt_modified datetime default current_timestamp on update current_timestamp,
     phone_number char(11) not null,
     wechat_id varchar(50),
-    icon varchar(50),
+    openid varchar(50),
+    avatar varchar(50),
     user_password varchar(16) not null,
     name varchar(10),
     school_id bigint unsigned,
@@ -23,6 +24,7 @@ create table user_info(
     is_student tinyint(1) unsigned ,
     number varchar(20),
     education tinyint(1) unsigned ,
+    title varchar(10),
     email varchar(50)
 )default charset=utf8;
 
@@ -36,19 +38,11 @@ create table course(
     end_date date,
     teacher_id bigint unsigned,
     description varchar(50),
-    score_rule_id bigint unsigned
-)default charset=utf8;
-
-drop table if exists score_rule;
-create table score_rule (
-  id bigint(20) unsigned not null auto_increment,
-  gmt_create datetime default current_timestamp,
-  gmt_modified datetime default current_timestamp on update current_timestamp,
-  report tinyint(3) unsigned default null,
-  five_point_percentage tinyint(3) unsigned default null,
-  four_point_percentage tinyint(3) unsigned default null,
-  three_point_percentage tinyint(3) unsigned default null,
-  primary key (id)
+    report_percentage tinyint(3) unsigned default null,
+    presentation_percentage tinyint(3) unsigned default null,
+    five_point_percentage tinyint(3) unsigned default null,
+    four_point_percentage tinyint(3) unsigned default null,
+    three_point_percentage tinyint(3) unsigned default null
 )default charset=utf8;
 
 drop table if exists class_info;
@@ -60,7 +54,11 @@ create table class_info (
   course_id bigint(20) unsigned,
   site varchar(255) default null,
   class_time varchar(255) default null,
-  score_rule_id bigint(20) unsigned,
+  report_percentage tinyint(3) unsigned default null,
+  presentation_percentage tinyint(3) unsigned default null,
+  five_point_percentage tinyint(3) unsigned default null,
+  four_point_percentage tinyint(3) unsigned default null,
+  three_point_percentage tinyint(3) unsigned default null,
   primary key (id)
 )default charset=utf8;
 
@@ -136,6 +134,8 @@ create table seminar_group(
 	   gmt_modified datetime default current_timestamp on update current_timestamp,
        seminar_id bigint unsigned,
        report_garde int unsigned check(report_grade>=1 and grade<=5),
+       presentation_grade int unsigned,
+       final_grade int unsigned,
        report varchar(100),
        class_id bigint unsigned,
        leader_id bigint unsigned
