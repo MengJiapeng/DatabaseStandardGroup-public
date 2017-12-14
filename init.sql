@@ -78,6 +78,7 @@ create table attendance(
     gmt_create datetime default current_timestamp,
     gmt_modified datetime default current_timestamp on update current_timestamp,
     student_id bigint unsigned not null,
+    seminar_id bigint unsigned not null,
     class_id bigint unsigned not null,
     attendance_status tinyint unsigned default 0,
     check (attendance_status=0 || attendance_status=1)
