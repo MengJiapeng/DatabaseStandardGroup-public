@@ -4,7 +4,7 @@ create table school(
     gmt_create datetime default current_timestamp,
     gmt_modified datetime default current_timestamp on update current_timestamp,
     name varchar(20) not null,
-    province varchar(10) not null,
+    province varchar(10) not null, 
     city varchar(10) not null
 )default charset=utf8;
 
@@ -126,7 +126,7 @@ create table fix_group_member(
        gmt_create datetime default current_timestamp, 
 	   gmt_modified datetime default current_timestamp on update current_timestamp,
        fix_group_id bigint unsigned,
-       student_id bigint unsigned,  
+       student_id bigint unsigned 
 )default charset=utf8;
 
 drop table if exists seminar_group;
