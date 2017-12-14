@@ -3,7 +3,7 @@ create table school(
     id  bigint unsigned primary key auto_increment,
     gmt_create datetime default current_timestamp,
     gmt_modified datetime default current_timestamp on update current_timestamp,
-    school_name varchar(20) not null,
+    name varchar(20) not null,
     province varchar(10) not null,
     city varchar(10) not null
 )default charset=utf8;
@@ -17,7 +17,7 @@ create table user_info(
     wechat_id varchar(50),
     icon varchar(50),
     user_password varchar(16) not null,
-    user_name varchar(10),
+    name varchar(10),
     school_id bigint unsigned,
     is_male tinyint(1) unsigned,
     is_student tinyint(1) unsigned ,
@@ -31,7 +31,7 @@ create table course(
     id bigint unsigned primary key auto_increment,
     gmt_create datetime default current_timestamp,
     gmt_modified datetime default current_timestamp on update current_timestamp,
-    course_name varchar(30) not null,
+    name varchar(30) not null,
     start_date date,
     end_date date,
     teacher_id bigint unsigned,
@@ -56,7 +56,7 @@ create table class_info (
   id bigint(20) unsigned not null auto_increment,
   gmt_create datetime default current_timestamp,
   gmt_modified datetime default current_timestamp on update current_timestamp,
-  class_name varchar(255) not null,
+  name varchar(255) not null,
   course_id bigint(20) unsigned,
   site varchar(255) default null,
   class_time varchar(255) default null,
@@ -90,7 +90,7 @@ create table seminar(
     id bigint unsigned auto_increment primary key,
     gmt_create datetime default current_timestamp,
     gmt_modified datetime default current_timestamp on update current_timestamp,
-    seminar_name varchar(300) not null,
+    name varchar(300) not null,
     seminar_description varchar(5000) default null,
     course_id bigint unsigned,
     is_fixed tinyint unsigned default 0,
@@ -104,7 +104,7 @@ create table topic(
     id bigint unsigned auto_increment primary key,
     gmt_create datetime default current_timestamp,
     gmt_modified datetime default current_timestamp on update current_timestamp,
-    topic_name varchar(300) not null,
+    name varchar(300) not null,
     description varchar(5000) default null,
     group_number_limit tinyint unsigned not null,
     group_student_limit tinyint unsigned not null,
@@ -126,8 +126,7 @@ create table fix_group_member(
        gmt_create datetime default current_timestamp, 
 	   gmt_modified datetime default current_timestamp on update current_timestamp,
        fix_group_id bigint unsigned,
-       student_id bigint unsigned,
-       leader bigint unsigned  
+       student_id bigint unsigned,  
 )default charset=utf8;
 
 drop table if exists seminar_group;
@@ -139,7 +138,7 @@ create table seminar_group(
        report_garde int unsigned check(report_grade>=1 and grade<=5),
        report varchar(100),
        class_id bigint unsigned,
-       leader bigint unsigned
+       leader_id bigint unsigned
 )default charset=utf8;
 
 drop table if exists seminar_group_member;
@@ -148,8 +147,7 @@ create table seminar_group_member(
        gmt_create datetime default current_timestamp, 
 	   gmt_modified datetime default current_timestamp on update current_timestamp,
        seminar_group_id bigint unsigned,
-       student_id bigint unsigned,
-       is_leader tinyint unsigned check(is_leader>=0 and is_leader<=1)
+       student_id bigint unsigned
 )default charset=utf8;
 
 drop table if exists seminar_group_topic;
