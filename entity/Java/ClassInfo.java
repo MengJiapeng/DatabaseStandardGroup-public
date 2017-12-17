@@ -8,6 +8,7 @@ public class ClassInfo {
 	private Course course;
 	private String site;
 	private String classTime;
+	private String description;
 	private Integer reportPercentage;
 	private Integer presentationPercentage;
 	private Integer fivePointPercentage;
@@ -43,6 +44,12 @@ public class ClassInfo {
 	}
 	public void setClassTime(String classTime) {
 		this.classTime = classTime;
+	}
+	public String getDescription() {
+		return this.description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
 	}
 	public Integer getReportPercentage() {
 		return reportPercentage;
