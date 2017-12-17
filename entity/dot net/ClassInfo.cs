@@ -12,6 +12,7 @@ namespace WebApplication2.Models
         public Course course { get; set; }
         public string site { get; set; }
         public string classTime { get; set; }
+        public string description { get; set; }
         public int reportPercentage { get; set; }
         public int presentationPercentage { get; set; }
         public int fivePointPercentage { get; set; }
