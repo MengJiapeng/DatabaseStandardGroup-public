@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace WebApplication2.Models
+﻿namespace Xmu.Crms.Shared.Models
 {
     public class School
     {
-        public int id { get; set; }
-        public string name { get; set; }
-        public string province { get; set; }
-        public string city { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Province { get; set; }
+        public string City { get; set; }
     }
 }

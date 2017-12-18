@@ -1,19 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace WebApplication2.Models
+﻿namespace Xmu.Crms.Shared.Models
 {
     public class StudentScoreGroup
     {
-        public int id { get; set; } 
+        public int Id { get; set; }
 
-        public Student student { get; set; }
+        public UserInfo Student { get; set; }
 
-        public SeminarGroupTopic seminarGroupTopic { get; set; }
+        public SeminarGroupTopic SeminarGroupTopic { get; set; }
 
-        public int grade { get; set; }
+        public int Grade { get; set; }
     }
 }

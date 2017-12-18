@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace WebApplication2.Models
+﻿namespace Xmu.Crms.Shared.Models
 {
     public class Attendance
     {
-        public int id { get; set; }
-        public Student student { get; set; }
-        public ClassInfo classInfo { get; set; }
-        public int attendanceSatus { get; set; }
+        public int Id { get; set; }
+        public UserInfo Student { get; set; }
+        public ClassInfo ClassInfo { get; set; }
+        public int AttendanceSatus { get; set; }
     }
 }

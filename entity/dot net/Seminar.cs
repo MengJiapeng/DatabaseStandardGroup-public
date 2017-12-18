@@ -1,18 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace WebApplication2.Models
+namespace Xmu.Crms.Shared.Models
 {
     public class Seminar
     {
-        public int id { get; set; }
-        public string name { get; set; }
-        public string description { get; set; }
-        public Course course { get; set; }
-        public int isFixed { get; set; }
-        public DateTime startTime { get; set; }
-        public DateTime endTime { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public Course Course { get; set; }
+        public int IsFixed { get; set; }
+        public DateTime StartTime { get; set; }
+        public DateTime EndTime { get; set; }
     }
 }

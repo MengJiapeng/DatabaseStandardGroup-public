@@ -1,23 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace WebApplication2.Models
+﻿namespace Xmu.Crms.Shared.Models
 {
     public class Location
     {
-        public int id { get; set; }
+        public int Id { get; set; }
 
-        public ClassInfo classInfo { get; set; }
+        public ClassInfo ClassInfo { get; set; }
 
-        public Seminar seminar { get; set; }
+        public Seminar Seminar { get; set; }
 
-        public double longitude { get; set; }
+        public double Longitude { get; set; }
 
-        public double latitude { get; set; }
+        public double Latitude { get; set; }
 
-        public int status { get; set; }
+        public int Status { get; set; }
     }
 }

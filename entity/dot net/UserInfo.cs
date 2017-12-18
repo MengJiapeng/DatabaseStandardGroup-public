@@ -1,24 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace WebApplication2.Models
+﻿namespace Xmu.Crms.Shared.Models
 {
     public class UserInfo
     {
-        public int id { get; set; }
-        public string phone { get; set; }
-        public string avatar { get; set; }
-        public string password { get; set; }
-        public string name { get; set; }
-        public School school { get; set; }
-        public int gender { get; set; }
-        public string number { get; set; }
-        public int education { get; set; }
-        public int title { get; set; }
-        public string email { get; set; }
+        public int Id { get; set; }
+        public string Phone { get; set; }
+        public string Avatar { get; set; }
+        public string Password { get; set; }
+        public string Name { get; set; }
+        public School School { get; set; }
+        public int Gender { get; set; }
+        public int Type { get; set; }
+        public string Number { get; set; }
+        public int Education { get; set; }
+        public int Title { get; set; }
+        public string Email { get; set; }
     }
-    public class Teacher : UserInfo { }
-    public class Student : UserInfo { }
 }

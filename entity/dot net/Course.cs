@@ -1,22 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace WebApplication2.Models
+namespace Xmu.Crms.Shared.Models
 {
     public class Course
     {
-        public int id { get; set; }
-        public string name { get; set; }
-        public DateTime startDate { get; set; }
-        public DateTime endDate { get; set; }
-        public Teacher teacher { get; set; }
-        public string description { get; set; }
-        public int reportPercentage { get; set; }
-        public int presentationPercentage { get; set; }
-        public int fivePointPercentage { get; set; }
-        public int fourPointPercentage { get; set; }
-        public int threePointPercentage { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public DateTime StartDate { get; set; }
+        public DateTime EndDate { get; set; }
+        public UserInfo Teacher { get; set; }
+        public string Description { get; set; }
+        public int ReportPercentage { get; set; }
+        public int PresentationPercentage { get; set; }
+        public int FivePointPercentage { get; set; }
+        public int FourPointPercentage { get; set; }
+        public int ThreePointPercentage { get; set; }
     }
 }

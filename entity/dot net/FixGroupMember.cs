@@ -1,18 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-
-namespace WebApplication2.Models
+﻿namespace Xmu.Crms.Shared.Models
 {
     public class FixGroupMember
     {
-        public int id { get; set; }
-        
-        public FixGroup fixGroup { get; set; }
+        public int Id { get; set; }
 
-        public Student student { get; set; }
+        public FixGroup FixGroup { get; set; }
+
+        public UserInfo Student { get; set; }
     }
 }
