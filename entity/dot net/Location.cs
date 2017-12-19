@@ -4,7 +4,7 @@ namespace Xmu.Crms.Shared.Models
 {
     public class Location
     {
-        public int Id { get; set; }
+        public long Id { get; set; }
 
         [ForeignKey("class_id")]
         public ClassInfo ClassInfo { get; set; }

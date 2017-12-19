@@ -4,7 +4,7 @@ namespace Xmu.Crms.Shared.Models
 {
     public class UserInfo
     {
-        public int Id { get; set; }
+        public long Id { get; set; }
         public string Phone { get; set; }
         public string Avatar { get; set; }
         public string Password { get; set; }

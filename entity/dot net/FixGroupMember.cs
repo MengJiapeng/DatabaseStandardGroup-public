@@ -4,7 +4,7 @@ namespace Xmu.Crms.Shared.Models
 {
     public class FixGroupMember
     {
-        public int Id { get; set; }
+        public long Id { get; set; }
 
         [ForeignKey("fix_group-id")]
         public FixGroup FixGroup { get; set; }

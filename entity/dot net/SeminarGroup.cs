@@ -4,7 +4,7 @@ namespace Xmu.Crms.Shared.Models
 {
     public class SeminarGroup
     {
-        public int Id { get; set; }
+        public long Id { get; set; }
 
         [ForeignKey("seminar_id")]
         public Seminar Seminar { get; set; }
