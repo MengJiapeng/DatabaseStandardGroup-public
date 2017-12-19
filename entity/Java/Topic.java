@@ -5,7 +5,7 @@ import java.math.BigInteger;
 public class Topic {
 	private BigInteger id;
 	private String name;
-	private String desciption;
+	private String description;
 	private Integer groupNumberLimit;
 	private Integer groupStudentLimit;
 	private Seminar seminar;
@@ -22,11 +22,11 @@ public class Topic {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getDesciption() {
-		return desciption;
+	public String getDescription() {
+		return description;
 	}
-	public void setDesciption(String desciption) {
-		this.desciption = desciption;
+	public void setDescription(String description) {
+		this.description = description;
 	}
 	public Integer getGroupNumberLimit() {
 		return groupNumberLimit;
