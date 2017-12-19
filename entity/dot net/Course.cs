@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Xmu.Crms.Shared.Models
 {
@@ -8,6 +9,7 @@ namespace Xmu.Crms.Shared.Models
         public string Name { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
+        [ForeignKey("teacher_id")]
         public UserInfo Teacher { get; set; }
         public string Description { get; set; }
         public int ReportPercentage { get; set; }

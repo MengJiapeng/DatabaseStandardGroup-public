@@ -1,11 +1,15 @@
-﻿namespace Xmu.Crms.Shared.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Xmu.Crms.Shared.Models
 {
     public class SeminarGroup
     {
         public int Id { get; set; }
 
+        [ForeignKey("seminar_id")]
         public Seminar Seminar { get; set; }
 
+        [ForeignKey("class_id")]
         public ClassInfo ClassInfo { get; set; }
 
         public string Report { get; set; }
@@ -16,6 +20,7 @@
 
         public int FinalGrade { get; set; }
 
+        [ForeignKey("leader")]
         public UserInfo Leader { get; set; }
     }
 }
