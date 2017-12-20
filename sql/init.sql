@@ -440,7 +440,7 @@ CREATE TABLE `seminar_group` (
   `gmt_create` datetime DEFAULT CURRENT_TIMESTAMP,
   `gmt_modified` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `seminar_id` bigint(20) unsigned DEFAULT NULL,
-  `report_garde` int(10) unsigned DEFAULT NULL,
+  `report_grade` int(10) unsigned DEFAULT NULL,
   `presentation_grade` int(10) unsigned DEFAULT NULL,
   `final_grade` int(10) unsigned DEFAULT NULL,
   `report` varchar(100) DEFAULT NULL,
