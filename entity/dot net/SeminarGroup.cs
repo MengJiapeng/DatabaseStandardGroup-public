@@ -20,7 +20,7 @@ namespace Xmu.Crms.Shared.Models
 
         public int FinalGrade { get; set; }
 
-        [ForeignKey("leader")]
+        [ForeignKey("leader_id")]
         public UserInfo Leader { get; set; }
     }
 }
