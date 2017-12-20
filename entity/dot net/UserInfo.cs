@@ -37,7 +37,7 @@ namespace Xmu.Crms.Shared.Models
         public Type Type { get; set; }
         public string Number { get; set; }
 
-        public bool Education { get; set; }
+        public Education Education { get; set; }
         public string Title { get; set; }
         public string Email { get; set; }
     }
