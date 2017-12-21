@@ -1474,3 +1474,17 @@ INSERT INTO `user_info` VALUES ('87', '2017-12-16 12:14:09', '2017-12-16 12:14:0
 INSERT INTO `user_info` VALUES ('88', '2017-12-16 12:14:09', '2017-12-16 12:14:09', '15720335888', null, null, null, 'BE8791B8BE6DEC10', '学生86', '1', '1', '0', '24320152202785', '1', NULL, '24320152202785@stu.xmu.edu.cn');
 INSERT INTO `user_info` VALUES ('89', '2017-12-16 12:14:09', '2017-12-16 12:14:09', '15720335889', null, null, null, 'BE8791B8BE6DEC10', '学生87', '1', '1', '0', '24320152202786', '1', NULL, '24320152202786@stu.xmu.edu.cn');
 INSERT INTO `user_info` VALUES ('90', '2017-12-16 12:14:09', '2017-12-16 12:14:09', '15720335802', null, null, null, 'BE8791B8BE6DEC10', '吴清强', '1', '0', '1', '20173492', '3', '0', '20173492@xmu.edu.cn');
+
+-- ----------------------------
+-- Table structure for event
+-- ----------------------------
+DROP TABLE IF EXISTS `event`;
+CREATE TABLE `event` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `gmt_create` datetime DEFAULT CURRENT_TIMESTAMP,
+  `gmt_modified` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `bean` varchar(255) DEFAULT NULL,
+  `parameter` varchar(255) DEFAULT NULL,
+  `time` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
