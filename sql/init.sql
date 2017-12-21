@@ -26,7 +26,7 @@ CREATE TABLE `attendance` (
   `student_id` bigint(20) unsigned NOT NULL,
   `seminar_id` bigint(20) unsigned NOT NULL,
   `class_id` bigint(20) unsigned NOT NULL,
-  `attendance_status` tinyint(3) unsigned DEFAULT '0',
+  `attendance_status` tinyint unsigned DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=29 DEFAULT CHARSET=utf8;
 
@@ -75,11 +75,11 @@ CREATE TABLE `class_info` (
   `description` varchar(5000) DEFAULT NULL,
   `site` varchar(255) DEFAULT NULL,
   `class_time` varchar(255) DEFAULT NULL,
-  `report_percentage` tinyint(3) unsigned DEFAULT NULL,
-  `presentation_percentage` tinyint(3) unsigned DEFAULT NULL,
-  `five_point_percentage` tinyint(3) unsigned DEFAULT NULL,
-  `four_point_percentage` tinyint(3) unsigned DEFAULT NULL,
-  `three_point_percentage` tinyint(3) unsigned DEFAULT NULL,
+  `report_percentage` tinyint unsigned DEFAULT NULL,
+  `presentation_percentage` tinyint unsigned DEFAULT NULL,
+  `five_point_percentage` tinyint unsigned DEFAULT NULL,
+  `four_point_percentage` tinyint unsigned DEFAULT NULL,
+  `three_point_percentage` tinyint unsigned DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
@@ -102,11 +102,11 @@ CREATE TABLE `course` (
   `end_date` date DEFAULT NULL,
   `teacher_id` bigint(20) unsigned DEFAULT NULL,
   `description` varchar(50) DEFAULT NULL,
-  `report_percentage` tinyint(3) unsigned DEFAULT NULL,
-  `presentation_percentage` tinyint(3) unsigned DEFAULT NULL,
-  `five_point_percentage` tinyint(3) unsigned DEFAULT NULL,
-  `four_point_percentage` tinyint(3) unsigned DEFAULT NULL,
-  `three_point_percentage` tinyint(3) unsigned DEFAULT NULL,
+  `report_percentage` tinyint unsigned DEFAULT NULL,
+  `presentation_percentage` tinyint unsigned DEFAULT NULL,
+  `five_point_percentage` tinyint unsigned DEFAULT NULL,
+  `four_point_percentage` tinyint unsigned DEFAULT NULL,
+  `three_point_percentage` tinyint unsigned DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
@@ -371,7 +371,7 @@ CREATE TABLE `location` (
   `seminar_id` bigint(20) unsigned DEFAULT NULL,
   `longitude` decimal(10,6) DEFAULT NULL,
   `latitude` decimal(10,6) DEFAULT NULL,
-  `status` tinyint(3) unsigned DEFAULT NULL,
+  `status` tinyint unsigned DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
@@ -390,7 +390,8 @@ CREATE TABLE `school` (
   `name` varchar(20) NOT NULL,
   `province` varchar(10) NOT NULL,
   `city` varchar(10) NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  unique(`name`, `province`, `city`)
 ) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -418,7 +419,7 @@ CREATE TABLE `seminar` (
   `name` varchar(300) NOT NULL,
   `description` varchar(5000) DEFAULT NULL,
   `course_id` bigint(20) unsigned DEFAULT NULL,
-  `is_fixed` tinyint(3) unsigned DEFAULT '0',
+  `is_fixed` tinyint unsigned DEFAULT '0',
   `start_time` date NOT NULL,
   `end_time` date NOT NULL,
   PRIMARY KEY (`id`)
@@ -752,7 +753,7 @@ CREATE TABLE `student_score_group` (
   `gmt_modified` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `student_id` bigint(20) unsigned DEFAULT NULL,
   `seminar_group_topic_id` bigint(20) unsigned DEFAULT NULL,
-  `grade` tinyint(3) unsigned DEFAULT NULL,
+  `grade` tinyint unsigned DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=571 DEFAULT CHARSET=utf8;
 
@@ -1340,8 +1341,8 @@ CREATE TABLE `topic` (
   `gmt_modified` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `name` varchar(300) NOT NULL,
   `description` varchar(5000) DEFAULT NULL,
-  `group_number_limit` tinyint(3) unsigned NOT NULL,
-  `group_student_limit` tinyint(3) unsigned NOT NULL,
+  `group_number_limit` tinyint unsigned NOT NULL,
+  `group_student_limit` tinyint unsigned NOT NULL,
   `seminar_id` bigint(20) unsigned NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
@@ -1371,11 +1372,11 @@ CREATE TABLE `user_info` (
   `password` varchar(16) NOT NULL,
   `name` varchar(10) DEFAULT NULL,
   `school_id` bigint(20) unsigned DEFAULT NULL,
-  `gender` tinyint(1) unsigned DEFAULT NULL,
-  `type` tinyint(1) unsigned DEFAULT NULL,
+  `gender` tinyint unsigned DEFAULT NULL,
+  `type` tinyint unsigned DEFAULT NULL,
   `number` varchar(20) DEFAULT NULL,
-  `education` tinyint(1) unsigned DEFAULT NULL,
-  `title` tinyint(1) DEFAULT NULL,
+  `education` tinyint unsigned DEFAULT NULL,
+  `title` tinyint unsigned DEFAULT NULL,
   `email` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=91 DEFAULT CHARSET=utf8;
