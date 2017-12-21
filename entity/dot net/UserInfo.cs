@@ -22,6 +22,12 @@ namespace Xmu.Crms.Shared.Models
         Doctor = 2
     }
 
+    public enum Title
+    {
+        Other = 0,
+        Professer = 1
+    }
+
     public class UserInfo
     {
         public long Id { get; set; }
@@ -38,7 +44,7 @@ namespace Xmu.Crms.Shared.Models
         public string Number { get; set; }
 
         public Education Education { get; set; }
-        public string Title { get; set; }
+        public Title? Title { get; set; }
         public string Email { get; set; }
     }
 }
