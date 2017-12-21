@@ -1375,7 +1375,7 @@ CREATE TABLE `user_info` (
   `type` tinyint(1) unsigned DEFAULT NULL,
   `number` varchar(20) DEFAULT NULL,
   `education` tinyint(1) unsigned DEFAULT NULL,
-  `title` varchar(10) DEFAULT NULL,
+  `title` tinyint(1) DEFAULT NULL,
   `email` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=91 DEFAULT CHARSET=utf8;
