@@ -477,13 +477,13 @@ namespace Xmu.Crms.Shared.Models
                     .HasColumnName("id");
                 entity
                     .Property(m => m.Bean)
-                    .HasColumnName("bean");
+                    .HasColumnName("bean_name");
                 entity
                     .Property(m => m.Parameter)
                     .HasColumnName("parameter");
                 entity
-                   .Property(m => m.Time)
-                   .HasColumnName("time");
+                   .Property(m => m.Method)
+                   .HasColumnName("method_name");
             });
         }
     }

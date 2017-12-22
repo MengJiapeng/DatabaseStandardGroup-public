@@ -9,6 +9,9 @@ namespace Xmu.Crms.Shared.Models
         [ForeignKey("class_id")]
         public ClassInfo ClassInfo { get; set; }
 
+        [ForeignKey("seminar_group_id")]
+        public SeminarGroup SeminarGroup { get; set; }
+
         [ForeignKey("leader_id")]
         public UserInfo Leader { get; set; }
     }
