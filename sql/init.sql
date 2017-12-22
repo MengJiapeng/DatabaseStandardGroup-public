@@ -1483,8 +1483,8 @@ CREATE TABLE `event` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `gmt_create` datetime DEFAULT CURRENT_TIMESTAMP,
   `gmt_modified` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `bean` varchar(255) DEFAULT NULL,
+  `bean_name` varchar(255) DEFAULT NULL,
+  `method_name` varchar(255) DEFAULT NULL,
   `parameter` varchar(255) DEFAULT NULL,
-  `time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
