@@ -11,6 +11,6 @@ namespace Xmu.Crms.Shared.Models
 
         public string Parameter { get; set; }
 
-        public DateTime Time { get; set; }
+        public string Method { get; set; }
     }
 }
