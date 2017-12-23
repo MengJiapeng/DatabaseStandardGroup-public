@@ -14,6 +14,7 @@ namespace Xmu.Crms.Shared.Models
         public DbSet<Course> Course { get; set; }
         public DbSet<CourseSelection> CourseSelection { get; set; }
         public DbSet<FixGroup> FixGroup { get; set; }
+        public DbSet<FixGroupTopic> FixGroupTopic { get; set; }
         public DbSet<FixGroupMember> FixGroupMember { get; set; }
         public DbSet<Location> Location { get; set; }
         public DbSet<School> School { get; set; }
@@ -162,6 +163,25 @@ namespace Xmu.Crms.Shared.Models
             modelBuilder.Entity<FixGroup>()
                 .ToTable("fix_group");
             modelBuilder.Entity<FixGroup>(entity =>
+            {
+                entity
+                    .Property<DateTime>("gmt_modified")
+                    .IsRowVersion();
+                entity
+                    .Property<DateTime>("gmt_create")
+                    .ValueGeneratedOnAdd();
+                entity
+                    .HasKey(m => m.Id);
+                entity
+                    .Property(m => m.Id)
+                    .HasColumnName("id");
+            });
+
+
+            //fix_group_topic表
+            modelBuilder.Entity<FixGroupTopic>()
+                .ToTable("fix_group_topic");
+            modelBuilder.Entity<FixGroupTopic>(entity =>
             {
                 entity
                     .Property<DateTime>("gmt_modified")
