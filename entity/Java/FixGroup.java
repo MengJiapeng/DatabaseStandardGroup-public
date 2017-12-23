@@ -1,4 +1,4 @@
-package xmu.crms.coursemanagesystem.entity;
+package xmu.crms.entity;
 
 import java.math.BigInteger;
 
@@ -25,5 +25,13 @@ public class FixGroup {
 	public void setLeader(User leader) {
 		this.leader = leader;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "FixGroup{" +
+				"id=" + id +
+				", classInfo=" + classInfo +
+				", leader=" + leader +
+				'}';
+	}
 }

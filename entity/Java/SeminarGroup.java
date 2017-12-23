@@ -1,4 +1,4 @@
-package xmu.crms.coursemanagesystem.entity;
+package xmu.crms.entity;
 
 import java.math.BigInteger;
 
@@ -11,7 +11,6 @@ public class SeminarGroup {
 	private Integer presentationGrade;
 	private Integer finalGrade;
 	private User leader;
-	private FixGroup fixGroup;
 
 	public BigInteger getId() {
 		return id;
@@ -77,11 +76,17 @@ public class SeminarGroup {
 		this.leader = leader;
 	}
 
-	public FixGroup getFixGroup() {
-		return fixGroup;
-	}
-
-	public void setFixGroup(FixGroup fixGroup) {
-		this.fixGroup = fixGroup;
+	@Override
+	public String toString() {
+		return "SeminarGroup{" +
+				"id=" + id +
+				", seminar=" + seminar +
+				", classInfo=" + classInfo +
+				", report='" + report + '\'' +
+				", reportGrade=" + reportGrade +
+				", presentationGrade=" + presentationGrade +
+				", finalGrade=" + finalGrade +
+				", leader=" + leader +
+				'}';
 	}
 }

@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : J2EE
-Source Server Version : 50720
-Source Host           : 120.77.173.98:3306
-Source Database       : xmu8204
+Source Server         : localhost
+Source Server Version : 50719
+Source Host           : localhost:3306
+Source Database       : test
 
 Target Server Type    : MYSQL
-Target Server Version : 50720
+Target Server Version : 50719
 File Encoding         : 65001
 
-Date: 2017-12-22 22:25:51
+Date: 2017-12-23 12:24:08
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -379,6 +379,23 @@ INSERT INTO `fix_group_member` VALUES ('85', '2017-12-16 12:11:39', '2017-12-16 
 INSERT INTO `fix_group_member` VALUES ('86', '2017-12-16 12:11:39', '2017-12-16 12:11:39', '18', '88');
 
 -- ----------------------------
+-- Table structure for fix_group_topic
+-- ----------------------------
+DROP TABLE IF EXISTS `fix_group_topic`;
+CREATE TABLE `fix_group_topic` (
+  `id` bigint(20) unsigned NOT NULL,
+  `gmt_create` datetime DEFAULT CURRENT_TIMESTAMP,
+  `gmt_modified` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `fix_group_id` bigint(20) unsigned DEFAULT NULL,
+  `topic_id` bigint(20) unsigned DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of fix_group_topic
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for location
 -- ----------------------------
 DROP TABLE IF EXISTS `location`;
@@ -466,49 +483,48 @@ CREATE TABLE `seminar_group` (
   `report` varchar(100) DEFAULT NULL,
   `class_id` bigint(20) unsigned DEFAULT NULL,
   `leader_id` bigint(20) unsigned DEFAULT NULL,
-  `fix_group_id` bigint(20) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=37 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of seminar_group
 -- ----------------------------
-INSERT INTO `seminar_group` VALUES ('1', '2017-12-16 12:12:18', '2017-12-16 12:12:18', '1', '5', '5', '5', '', '1', '3', null);
-INSERT INTO `seminar_group` VALUES ('2', '2017-12-16 12:12:18', '2017-12-16 12:12:18', '1', '4', '5', '5', '', '1', '8', null);
-INSERT INTO `seminar_group` VALUES ('3', '2017-12-16 12:12:18', '2017-12-16 12:12:18', '1', '5', '4', '5', '', '1', '13', null);
-INSERT INTO `seminar_group` VALUES ('4', '2017-12-16 12:12:18', '2017-12-16 12:12:18', '1', '5', '3', '4', '', '1', '18', null);
-INSERT INTO `seminar_group` VALUES ('5', '2017-12-16 12:12:18', '2017-12-16 12:12:18', '1', '4', '5', '5', '', '1', '23', null);
-INSERT INTO `seminar_group` VALUES ('6', '2017-12-16 12:12:18', '2017-12-16 12:12:18', '1', '3', '4', '4', '', '1', '27', null);
-INSERT INTO `seminar_group` VALUES ('7', '2017-12-16 12:12:18', '2017-12-16 12:12:18', '1', '5', '4', '5', '', '2', '31', null);
-INSERT INTO `seminar_group` VALUES ('8', '2017-12-16 12:12:18', '2017-12-16 12:12:18', '1', '4', '4', '4', '', '2', '36', null);
-INSERT INTO `seminar_group` VALUES ('9', '2017-12-16 12:12:18', '2017-12-16 12:12:18', '1', '5', '5', '5', '', '2', '41', null);
-INSERT INTO `seminar_group` VALUES ('10', '2017-12-16 12:12:18', '2017-12-16 12:12:18', '1', '5', '5', '5', '', '2', '46', null);
-INSERT INTO `seminar_group` VALUES ('11', '2017-12-16 12:12:18', '2017-12-16 12:12:18', '1', '4', '5', '5', '', '2', '51', null);
-INSERT INTO `seminar_group` VALUES ('12', '2017-12-16 12:12:18', '2017-12-16 12:12:18', '1', '3', '3', '3', '', '2', '56', null);
-INSERT INTO `seminar_group` VALUES ('13', '2017-12-16 12:12:18', '2017-12-16 12:12:18', '1', '5', '3', '4', '', '2', '61', null);
-INSERT INTO `seminar_group` VALUES ('14', '2017-12-16 12:12:18', '2017-12-16 12:12:18', '1', '4', '5', '5', '', '2', '66', null);
-INSERT INTO `seminar_group` VALUES ('15', '2017-12-16 12:12:18', '2017-12-16 12:12:18', '1', '5', '4', '5', '', '2', '71', null);
-INSERT INTO `seminar_group` VALUES ('16', '2017-12-16 12:12:18', '2017-12-16 12:12:18', '1', '5', '5', '5', '', '2', '76', null);
-INSERT INTO `seminar_group` VALUES ('17', '2017-12-16 12:12:18', '2017-12-16 12:12:18', '1', '4', '4', '4', '', '2', '81', null);
-INSERT INTO `seminar_group` VALUES ('18', '2017-12-16 12:12:18', '2017-12-16 12:12:18', '1', '3', '5', '4', '', '2', '85', null);
-INSERT INTO `seminar_group` VALUES ('19', '2017-12-16 12:12:18', '2017-12-16 12:12:18', '2', null, null, null, '', '2', '31', null);
-INSERT INTO `seminar_group` VALUES ('20', '2017-12-16 12:12:18', '2017-12-16 12:12:18', '2', null, null, null, '', '2', '36', null);
-INSERT INTO `seminar_group` VALUES ('21', '2017-12-16 12:12:18', '2017-12-16 12:12:18', '2', null, null, null, '', '2', '41', null);
-INSERT INTO `seminar_group` VALUES ('22', '2017-12-16 12:12:18', '2017-12-16 12:12:18', '2', null, null, null, '', '2', '46', null);
-INSERT INTO `seminar_group` VALUES ('23', '2017-12-16 12:12:18', '2017-12-16 12:12:18', '2', null, null, null, '', '2', '51', null);
-INSERT INTO `seminar_group` VALUES ('24', '2017-12-16 12:12:18', '2017-12-16 12:12:18', '2', null, null, null, '', '2', '56', null);
-INSERT INTO `seminar_group` VALUES ('25', '2017-12-16 12:12:18', '2017-12-16 12:12:18', '2', null, null, null, '', '2', '61', null);
-INSERT INTO `seminar_group` VALUES ('26', '2017-12-16 12:12:18', '2017-12-16 12:12:18', '2', null, null, null, '', '2', '66', null);
-INSERT INTO `seminar_group` VALUES ('27', '2017-12-16 12:12:18', '2017-12-16 12:12:18', '2', null, null, null, '', '2', '71', null);
-INSERT INTO `seminar_group` VALUES ('28', '2017-12-16 12:12:18', '2017-12-16 12:12:18', '2', null, null, null, '', '2', '76', null);
-INSERT INTO `seminar_group` VALUES ('29', '2017-12-16 12:12:18', '2017-12-16 12:12:18', '2', null, null, null, '', '2', '81', null);
-INSERT INTO `seminar_group` VALUES ('30', '2017-12-16 12:12:18', '2017-12-16 12:12:18', '2', null, null, null, '', '2', '85', null);
-INSERT INTO `seminar_group` VALUES ('31', '2017-12-16 12:12:18', '2017-12-16 12:12:18', '3', null, null, null, '', '1', '3', null);
-INSERT INTO `seminar_group` VALUES ('32', '2017-12-16 12:12:18', '2017-12-16 12:12:18', '3', null, null, null, '', '1', '8', null);
-INSERT INTO `seminar_group` VALUES ('33', '2017-12-16 12:12:18', '2017-12-16 12:12:18', '3', null, null, null, '', '1', '13', null);
-INSERT INTO `seminar_group` VALUES ('34', '2017-12-16 12:12:18', '2017-12-16 12:12:18', '3', null, null, null, '', '1', '18', null);
-INSERT INTO `seminar_group` VALUES ('35', '2017-12-16 12:12:18', '2017-12-16 12:12:18', '3', null, null, null, '', '1', '23', null);
-INSERT INTO `seminar_group` VALUES ('36', '2017-12-16 12:12:18', '2017-12-16 12:12:18', '3', null, null, null, '', '1', '27', null);
+INSERT INTO `seminar_group` VALUES ('1', '2017-12-16 12:12:18', '2017-12-16 12:12:18', '1', '5', '5', '5', '', '1', '3');
+INSERT INTO `seminar_group` VALUES ('2', '2017-12-16 12:12:18', '2017-12-16 12:12:18', '1', '4', '5', '5', '', '1', '8');
+INSERT INTO `seminar_group` VALUES ('3', '2017-12-16 12:12:18', '2017-12-16 12:12:18', '1', '5', '4', '5', '', '1', '13');
+INSERT INTO `seminar_group` VALUES ('4', '2017-12-16 12:12:18', '2017-12-16 12:12:18', '1', '5', '3', '4', '', '1', '18');
+INSERT INTO `seminar_group` VALUES ('5', '2017-12-16 12:12:18', '2017-12-16 12:12:18', '1', '4', '5', '5', '', '1', '23');
+INSERT INTO `seminar_group` VALUES ('6', '2017-12-16 12:12:18', '2017-12-16 12:12:18', '1', '3', '4', '4', '', '1', '27');
+INSERT INTO `seminar_group` VALUES ('7', '2017-12-16 12:12:18', '2017-12-16 12:12:18', '1', '5', '4', '5', '', '2', '31');
+INSERT INTO `seminar_group` VALUES ('8', '2017-12-16 12:12:18', '2017-12-16 12:12:18', '1', '4', '4', '4', '', '2', '36');
+INSERT INTO `seminar_group` VALUES ('9', '2017-12-16 12:12:18', '2017-12-16 12:12:18', '1', '5', '5', '5', '', '2', '41');
+INSERT INTO `seminar_group` VALUES ('10', '2017-12-16 12:12:18', '2017-12-16 12:12:18', '1', '5', '5', '5', '', '2', '46');
+INSERT INTO `seminar_group` VALUES ('11', '2017-12-16 12:12:18', '2017-12-16 12:12:18', '1', '4', '5', '5', '', '2', '51');
+INSERT INTO `seminar_group` VALUES ('12', '2017-12-16 12:12:18', '2017-12-16 12:12:18', '1', '3', '3', '3', '', '2', '56');
+INSERT INTO `seminar_group` VALUES ('13', '2017-12-16 12:12:18', '2017-12-16 12:12:18', '1', '5', '3', '4', '', '2', '61');
+INSERT INTO `seminar_group` VALUES ('14', '2017-12-16 12:12:18', '2017-12-16 12:12:18', '1', '4', '5', '5', '', '2', '66');
+INSERT INTO `seminar_group` VALUES ('15', '2017-12-16 12:12:18', '2017-12-16 12:12:18', '1', '5', '4', '5', '', '2', '71');
+INSERT INTO `seminar_group` VALUES ('16', '2017-12-16 12:12:18', '2017-12-16 12:12:18', '1', '5', '5', '5', '', '2', '76');
+INSERT INTO `seminar_group` VALUES ('17', '2017-12-16 12:12:18', '2017-12-16 12:12:18', '1', '4', '4', '4', '', '2', '81');
+INSERT INTO `seminar_group` VALUES ('18', '2017-12-16 12:12:18', '2017-12-16 12:12:18', '1', '3', '5', '4', '', '2', '85');
+INSERT INTO `seminar_group` VALUES ('19', '2017-12-16 12:12:18', '2017-12-16 12:12:18', '2', null, null, null, '', '2', '31');
+INSERT INTO `seminar_group` VALUES ('20', '2017-12-16 12:12:18', '2017-12-16 12:12:18', '2', null, null, null, '', '2', '36');
+INSERT INTO `seminar_group` VALUES ('21', '2017-12-16 12:12:18', '2017-12-16 12:12:18', '2', null, null, null, '', '2', '41');
+INSERT INTO `seminar_group` VALUES ('22', '2017-12-16 12:12:18', '2017-12-16 12:12:18', '2', null, null, null, '', '2', '46');
+INSERT INTO `seminar_group` VALUES ('23', '2017-12-16 12:12:18', '2017-12-16 12:12:18', '2', null, null, null, '', '2', '51');
+INSERT INTO `seminar_group` VALUES ('24', '2017-12-16 12:12:18', '2017-12-16 12:12:18', '2', null, null, null, '', '2', '56');
+INSERT INTO `seminar_group` VALUES ('25', '2017-12-16 12:12:18', '2017-12-16 12:12:18', '2', null, null, null, '', '2', '61');
+INSERT INTO `seminar_group` VALUES ('26', '2017-12-16 12:12:18', '2017-12-16 12:12:18', '2', null, null, null, '', '2', '66');
+INSERT INTO `seminar_group` VALUES ('27', '2017-12-16 12:12:18', '2017-12-16 12:12:18', '2', null, null, null, '', '2', '71');
+INSERT INTO `seminar_group` VALUES ('28', '2017-12-16 12:12:18', '2017-12-16 12:12:18', '2', null, null, null, '', '2', '76');
+INSERT INTO `seminar_group` VALUES ('29', '2017-12-16 12:12:18', '2017-12-16 12:12:18', '2', null, null, null, '', '2', '81');
+INSERT INTO `seminar_group` VALUES ('30', '2017-12-16 12:12:18', '2017-12-16 12:12:18', '2', null, null, null, '', '2', '85');
+INSERT INTO `seminar_group` VALUES ('31', '2017-12-16 12:12:18', '2017-12-16 12:12:18', '3', null, null, null, '', '1', '3');
+INSERT INTO `seminar_group` VALUES ('32', '2017-12-16 12:12:18', '2017-12-16 12:12:18', '3', null, null, null, '', '1', '8');
+INSERT INTO `seminar_group` VALUES ('33', '2017-12-16 12:12:18', '2017-12-16 12:12:18', '3', null, null, null, '', '1', '13');
+INSERT INTO `seminar_group` VALUES ('34', '2017-12-16 12:12:18', '2017-12-16 12:12:18', '3', null, null, null, '', '1', '18');
+INSERT INTO `seminar_group` VALUES ('35', '2017-12-16 12:12:18', '2017-12-16 12:12:18', '3', null, null, null, '', '1', '23');
+INSERT INTO `seminar_group` VALUES ('36', '2017-12-16 12:12:18', '2017-12-16 12:12:18', '3', null, null, null, '', '1', '27');
 
 -- ----------------------------
 -- Table structure for seminar_group_member

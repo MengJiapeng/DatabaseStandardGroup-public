@@ -1,4 +1,4 @@
-package xmu.crms.coursemanagesystem.entity;
+package xmu.crms.entity;
 
 import java.math.BigInteger;
 
@@ -26,4 +26,12 @@ public class SeminarGroupMember {
 		this.student = student;
 	}
 
+	@Override
+	public String toString() {
+		return "SeminarGroupMember{" +
+				"id=" + id +
+				", seminarGroup=" + seminarGroup +
+				", student=" + student +
+				'}';
+	}
 }

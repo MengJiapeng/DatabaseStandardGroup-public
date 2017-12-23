@@ -1,4 +1,4 @@
-package xmu.crms.coursemanagesystem.entity;
+package xmu.crms.entity;
 
 import java.math.BigInteger;
 import java.util.Date;
@@ -44,10 +44,21 @@ public class Event {
     }
 
     public Date getTime() {
-        return this.time;
+        return time;
     }
 
     public void setTime(Date time) {
         this.time = time;
+    }
+
+    @Override
+    public String toString() {
+        return "Event{" +
+                "id=" + id +
+                ", beanName='" + beanName + '\'' +
+                ", methodName='" + methodName + '\'' +
+                ", parameter='" + parameter + '\'' +
+                ", time=" + time +
+                '}';
     }
 }

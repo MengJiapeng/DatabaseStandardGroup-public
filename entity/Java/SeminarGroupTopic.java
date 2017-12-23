@@ -1,4 +1,4 @@
-package xmu.crms.coursemanagesystem.entity;
+package xmu.crms.entity;
 
 import java.math.BigInteger;
 
@@ -33,4 +33,13 @@ public class SeminarGroupTopic {
 		this.presentationGrade = presentationGrade;
 	}
 
+	@Override
+	public String toString() {
+		return "SeminarGroupTopic{" +
+				"id=" + id +
+				", topic=" + topic +
+				", seminarGroup=" + seminarGroup +
+				", presentationGrade=" + presentationGrade +
+				'}';
+	}
 }
