@@ -16,6 +16,9 @@ namespace Xmu.Crms.Shared.Models
         public UserInfo Student { get; set; }
         [ForeignKey("class_id")]
         public ClassInfo ClassInfo { get; set; }
+        [ForeignKey("seminar_id")]
+        public Seminar Seminar { get; set; }
+
         public AttendanceStatus AttendanceStatus { get; set; }
     }
 }

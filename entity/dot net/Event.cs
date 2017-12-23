@@ -5,7 +5,7 @@ namespace Xmu.Crms.Shared.Models
 {
     public class Event
     {
-        public long id { get; set; }
+        public long Id { get; set; }
 
         public string Bean { get; set; }
 

@@ -12,6 +12,6 @@ namespace Xmu.Crms.Shared.Models
         [ForeignKey("seminar_group_id")]
         public SeminarGroup SeminarGroup { get; set; }
 
-        public int PresentationGrade { get; set; }
+        public int? PresentationGrade { get; set; }
     }
 }
