@@ -504,6 +504,9 @@ namespace Xmu.Crms.Shared.Models
                 entity
                    .Property(m => m.Method)
                    .HasColumnName("method_name");
+                entity
+                   .Property(m => m.Time)
+                   .HasColumnName("time");
             });
         }
     }
