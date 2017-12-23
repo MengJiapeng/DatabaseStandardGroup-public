@@ -20,6 +20,9 @@ namespace Xmu.Crms.Shared.Models
 
         public int FinalGrade { get; set; }
 
+        [ForeignKey("fix_group_id")]
+        public FixGroup FixGroup { get; set; }
+
         [ForeignKey("leader_id")]
         public UserInfo Leader { get; set; }
     }
