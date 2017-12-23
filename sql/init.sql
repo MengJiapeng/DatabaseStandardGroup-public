@@ -232,6 +232,7 @@ CREATE TABLE `event` (
   `bean_name` varchar(255) DEFAULT NULL,
   `method_name` varchar(255) DEFAULT NULL,
   `parameter` varchar(255) DEFAULT NULL,
+  `time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 

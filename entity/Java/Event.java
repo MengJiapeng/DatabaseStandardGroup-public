@@ -9,6 +9,7 @@ public class Event {
     private String beanName;
     private String methodName;
     private String parameter;
+    private Date time;
 
     public BigInteger getId() {
         return id;
@@ -40,5 +41,13 @@ public class Event {
 
     public void setMethodName(String methodName) {
         this.methodName = methodName;
+    }
+
+    public Date getTime() {
+        return this.time;
+    }
+
+    public void setTime(Date time) {
+        this.time = time;
     }
 }
