@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Xmu.Crms.Shared.Models
 {
@@ -31,20 +32,30 @@ namespace Xmu.Crms.Shared.Models
     public class UserInfo
     {
         public long Id { get; set; }
+
+        [Required]
         public string Phone { get; set; }
+
         public string Avatar { get; set; }
+
+        [Required]
         public string Password { get; set; }
+
         public string Name { get; set; }
 
         [ForeignKey("school_id")]
         public School School { get; set; }
 
-        public Gender Gender { get; set; }
-        public Type Type { get; set; }
+        public Gender? Gender { get; set; }
+
+        public Type? Type { get; set; }
+
         public string Number { get; set; }
 
-        public Education Education { get; set; }
+        public Education? Education { get; set; }
+
         public Title? Title { get; set; }
+
         public string Email { get; set; }
     }
 }
