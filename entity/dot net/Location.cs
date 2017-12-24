@@ -12,9 +12,9 @@ namespace Xmu.Crms.Shared.Models
         [ForeignKey("seminar_id")]
         public Seminar Seminar { get; set; }
 
-        public double? Longitude { get; set; }
+        public decimal? Longitude { get; set; }
 
-        public double? Latitude { get; set; }
+        public decimal? Latitude { get; set; }
 
         public int? Status { get; set; }
     }
