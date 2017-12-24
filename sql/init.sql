@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50719
 File Encoding         : 65001
 
-Date: 2017-12-23 12:24:08
+Date: 2017-12-24 20:04:57
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -1375,6 +1375,7 @@ CREATE TABLE `topic` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `gmt_create` datetime DEFAULT CURRENT_TIMESTAMP,
   `gmt_modified` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `serial` varchar(10) NOT NULL,
   `name` varchar(300) NOT NULL,
   `description` varchar(5000) DEFAULT NULL,
   `group_number_limit` tinyint(3) unsigned NOT NULL,
@@ -1386,12 +1387,12 @@ CREATE TABLE `topic` (
 -- ----------------------------
 -- Records of topic
 -- ----------------------------
-INSERT INTO `topic` VALUES ('1', '2017-12-15 22:29:16', '2017-12-15 22:29:16', '话题1', '话题说明1', '9', '5', '1');
-INSERT INTO `topic` VALUES ('2', '2017-12-15 22:29:16', '2017-12-15 22:29:16', '话题2', '话题说明2', '9', '5', '1');
-INSERT INTO `topic` VALUES ('3', '2017-12-15 22:29:16', '2017-12-15 22:29:16', '话题3', '话题说明3', '6', '5', '2');
-INSERT INTO `topic` VALUES ('4', '2017-12-15 22:29:16', '2017-12-15 22:29:16', '话题4', '话题说明4', '6', '5', '2');
-INSERT INTO `topic` VALUES ('5', '2017-12-15 22:29:16', '2017-12-15 22:29:16', '话题5', '话题说明5', '3', '5', '3');
-INSERT INTO `topic` VALUES ('6', '2017-12-15 22:29:16', '2017-12-15 22:29:16', '话题6', '话题说明6', '3', '5', '3');
+INSERT INTO `topic` VALUES ('1', '2017-12-15 22:29:16', '2017-12-24 20:04:32', 'A', '话题1', '话题说明1', '9', '5', '1');
+INSERT INTO `topic` VALUES ('2', '2017-12-15 22:29:16', '2017-12-24 20:04:37', 'B', '话题2', '话题说明2', '9', '5', '1');
+INSERT INTO `topic` VALUES ('3', '2017-12-15 22:29:16', '2017-12-24 20:04:39', 'A', '话题3', '话题说明3', '6', '5', '2');
+INSERT INTO `topic` VALUES ('4', '2017-12-15 22:29:16', '2017-12-24 20:04:41', 'B', '话题4', '话题说明4', '6', '5', '2');
+INSERT INTO `topic` VALUES ('5', '2017-12-15 22:29:16', '2017-12-24 20:04:42', 'A', '话题5', '话题说明5', '3', '5', '3');
+INSERT INTO `topic` VALUES ('6', '2017-12-15 22:29:16', '2017-12-24 20:04:49', 'B', '话题6', '话题说明6', '3', '5', '3');
 
 -- ----------------------------
 -- Table structure for user_info
