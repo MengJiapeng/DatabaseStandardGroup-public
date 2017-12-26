@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Xmu.Crms.Shared.Models
@@ -43,7 +44,10 @@ namespace Xmu.Crms.Shared.Models
 
         public string Name { get; set; }
 
-        [ForeignKey("school_id")]
+        [Column("school_id")]
+        public long? SchoolId { get; set; }
+
+        [ForeignKey("SchoolId")]
         public School School { get; set; }
 
         public Gender? Gender { get; set; }
@@ -57,5 +61,14 @@ namespace Xmu.Crms.Shared.Models
         public Title? Title { get; set; }
 
         public string Email { get; set; }
+
+        public IList<CourseSelection> CourseSelections { get; set; }
+
+        public IList<SeminarGroupMember> SeminarGroupMembers { get; set; }
+
+        public IList<FixGroupMember> FixGroupMembers { get; set; }
+
+        public IList<Attendance> Attendances { get; set; }
+
     }
 }

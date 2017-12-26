@@ -6,10 +6,16 @@ namespace Xmu.Crms.Shared.Models
     {
         public long Id { get; set; }
 
-        [ForeignKey("fix_group_id")]
+        [Column("fix_group_id")]
+        public long FixGroupId { get; set; }
+
+        [ForeignKey("FixGroupId")]
         public FixGroup FixGroup { get; set; }
 
-        [ForeignKey("student_id")]
+        [Column("student_id")]
+        public long StudentId { get; set; }
+
+        [ForeignKey("StudentId")]
         public UserInfo Student { get; set; }
     }
 }

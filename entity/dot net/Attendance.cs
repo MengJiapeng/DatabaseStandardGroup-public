@@ -14,15 +14,24 @@ namespace Xmu.Crms.Shared.Models
     {
         public long Id { get; set; }
 
-        [ForeignKey("student_id")]
+        [Column("student_id")]
+        public long StudentId { get; set; }
+
+        [ForeignKey("StudentId")]
         [Required]
         public UserInfo Student { get; set; }
 
-        [ForeignKey("class_id")]
+        [Column("class_id")]
+        public long ClassId { get; set; }
+
+        [ForeignKey("ClassId")]
         [Required]
         public ClassInfo ClassInfo { get; set; }
 
-        [ForeignKey("seminar_id")]
+        [Column("seminar_id")]
+        public long SeminarId { get; set; }
+
+        [ForeignKey("SeminarId")]
         [Required]
         public Seminar Seminar { get; set; }
 

@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Xmu.Crms.Shared.Models
@@ -10,7 +11,10 @@ namespace Xmu.Crms.Shared.Models
         [Required]
         public string Name { get; set; }
 
-        [ForeignKey("course_id")]
+        [Column("course_id")]
+        public long CourseId { get; set; }
+
+        [ForeignKey("CourseId")]
         public Course Course { get; set; }
 
         public string Site { get; set; }
@@ -26,5 +30,9 @@ namespace Xmu.Crms.Shared.Models
         public int? FourPointPercentage { get; set; }
 
         public int? ThreePointPercentage { get; set; }
+
+        public IList<Attendance> Attendances { get; set; }
+
+        public IList<CourseSelection> CourseSelections { get; set; }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Xmu.Crms.Shared.Models
@@ -18,8 +19,15 @@ namespace Xmu.Crms.Shared.Models
 
         public int GroupStudentLimit { get; set; }
 
+        [Column("seminar_id")]
+        public long SeminarId { get; set; }
+
         [Required]
-        [ForeignKey("seminar_id")]
+        [ForeignKey("SeminarId")]
         public Seminar Seminar { get; set; }
+
+        public IList<SeminarGroupTopic> SeminarGroupTopics { get; set; }
+
+        public IList<FixGroupTopic> FixGroupTopics { get; set; }
     }
 }

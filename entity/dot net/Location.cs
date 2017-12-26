@@ -6,10 +6,16 @@ namespace Xmu.Crms.Shared.Models
     {
         public long Id { get; set; }
 
-        [ForeignKey("class_id")]
+        [Column("class_id")]
+        public long ClassInfoId { get; set; }
+
+        [ForeignKey("ClassInfoId")]
         public ClassInfo ClassInfo { get; set; }
 
-        [ForeignKey("seminar_id")]
+        [Column("seminar_id")]
+        public long SeminarId { get; set; }
+
+        [ForeignKey("SeminarId")]
         public Seminar Seminar { get; set; }
 
         public decimal? Longitude { get; set; }

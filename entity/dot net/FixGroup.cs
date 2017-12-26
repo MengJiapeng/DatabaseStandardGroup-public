@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Xmu.Crms.Shared.Models
 {
@@ -6,10 +7,20 @@ namespace Xmu.Crms.Shared.Models
     {
         public long Id { get; set; }
 
-        [ForeignKey("class_id")] 
+        [Column("class_id")]
+        public long ClassId { get; set; }
+
+        [ForeignKey("ClassId")] 
         public ClassInfo ClassInfo { get; set; }
 
-        [ForeignKey("leader_id")]
+        [Column("leader_id")]
+        public long LeaderId { get; set; }
+
+        [ForeignKey("LeaderId")]
         public UserInfo Leader { get; set; }
+
+        public IList<FixGroupMember> FixGroupMembers { get; set; }
+
+        public IList<FixGroupTopic> FixGroupTopics { get; set; }
     }
 }
