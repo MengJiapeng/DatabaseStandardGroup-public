@@ -15,7 +15,10 @@ namespace Xmu.Crms.Shared.Models
 
         public DateTime EndDate { get; set; }
 
-        [ForeignKey("teacher_id")]
+        [Column("teacher_id")]
+        public long TeacherId { get; set; }
+
+        [ForeignKey("TeacherId")]
         public UserInfo Teacher { get; set; }
 
         public string Description { get; set; }
